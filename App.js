@@ -65,7 +65,7 @@ export default function App() {
           name="Cadastro Doador"
           component={CadastroDoador}
           options={{
-            tabBarLabel: 'Todas as frases',
+            tabBarLabel: 'Cadastro Doador',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name='format-list-bulleted' color={color} size={30} />
             )
@@ -75,7 +75,7 @@ export default function App() {
           name="Login"
           component={Login}
           options={{
-            tabBarLabel: 'Todas as frases',
+            tabBarLabel: 'Login',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name='format-list-bulleted' color={color} size={30} />
             )
