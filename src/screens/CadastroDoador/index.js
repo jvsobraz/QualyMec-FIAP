@@ -14,7 +14,7 @@ const AdicionarDoador = () => {
 
     axios.post('/api/v1/Doador', newDonor)
       .then(response => {
-        console.log('Donor added successfully');
+        console.log('Doador adicionado com sucesso');
       })
       .catch(error => {
         console.error(error);
