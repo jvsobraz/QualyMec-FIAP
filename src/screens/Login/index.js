@@ -9,7 +9,7 @@ export default function Login({ navigation }) {
 
   function handleLogin() {
     try {
-      const response = axios.post('http://localhost:8080/api/login', {
+      const response = axios.post('http://localhost:8080/api/login--', {
         email: login,
         senha: senha,
       });
