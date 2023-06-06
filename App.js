@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useFonts, Lobster_400Regular } from '@expo-google-fonts/lobster';
 import { ActivityIndicator } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import CadastroOng from './src/screens/CadastroOng';
 import CadastroDoador from './src/screens/CadastroDoador';
@@ -93,8 +94,8 @@ export default function App() {
 
   return (
     <NavigationContainer>
+    /*{user.type === 'doador' ? <TabsDoador/> : <TabsOng />} */
      <Login/>
-     {user.type === 'doador' ? <TabsDoador/> : <TabsOng />}
     </NavigationContainer>
   )
 }
