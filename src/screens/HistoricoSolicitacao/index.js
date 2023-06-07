@@ -4,7 +4,7 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 export default function Login({ navigation }) {
-  const [nomeOrganizacao, setNomeCompleto] = useState('');
+  const [nomeOrganizacao, setNomeOrganizacao] = useState('');
   const [siglaEstado, setEmail] = useState('');
   const [nomeCidadeOrigem, setSenha] = useState('');
   const [enderecoOrigem, setNascimento] = useState('');
@@ -34,7 +34,7 @@ export default function Login({ navigation }) {
 
       if (response.status === 200) {
         Alert.alert('Sucesso');
-        setNomeCompleto('');
+        setNomeOrganizacao('');
         setEmail('');
         setSenha('');
         setNascimento('');
