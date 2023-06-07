@@ -10,7 +10,7 @@ export default function Login({ navigation }) {
   const [nascimento, setNascimento] = useState('');
   const [telefone, setTelefone] = useState('');
 
-  function handleAlimento() {
+  function handleDoador() {
     try {
       const response = axios.post('http://localhost:8080/api/v1/doador', {
         nomeCompleto: nomeCompleto,
@@ -38,7 +38,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleDoador() {
     try {
       const response = axios.delete('http://localhost:8080/api/v1/doador/{id}', {
         nomeCompleto: nomeCompleto,
@@ -66,7 +66,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleDoador() {
     try {
       const response = axios.put('http://localhost:8080/api/v1/doador/{id}', {
         nomeCompleto: nomeCompleto,
@@ -94,7 +94,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleDoador() {
     try {
       const response = axios.get('http://localhost:8080/api/v1/doador', {
         nomeCompleto: nomeCompleto,

@@ -14,7 +14,7 @@ export default function Login({ navigation }) {
   const [endereco, setEndereco] = useState('');
   const [tipoDocumento, setTipoDocumento] = useState('');
 
-  function handleIntituto() {
+  function handleInstituto() {
     try {
       const response = axios.post('http://localhost:8080/api/v1/instituto', {
         nomeOrganizacao: nomeOrganizacao,
@@ -50,7 +50,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleIntituto() {
+  function handleInstituto() {
     try {
       const response = axios.delete('http://localhost:8080/api/v1/instituto/{id}', {
         nomeCompleto: nomeCompleto,
@@ -78,7 +78,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleIntituto() {
+  function handleInstituto() {
     try {
       const response = axios.put('http://localhost:8080/api/v1/instituto/{id}', {
         nomeCompleto: nomeCompleto,
@@ -106,7 +106,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleIntituto() {
+  function handleInstituto() {
     try {
       const response = axios.get('http://localhost:8080/api/v1/instituto', {
         nomeCompleto: nomeCompleto,

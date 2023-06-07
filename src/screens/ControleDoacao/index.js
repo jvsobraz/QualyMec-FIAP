@@ -8,7 +8,7 @@ export default function Login({ navigation }) {
   const [quantidadeArrecadada, setQuantidadeArrecadada] = useState('');
   const [numeroContribuinte, setNumeroContribuinte] = useState('');
 
-  function handleAlimento() {
+  function handleControleDoacao() {
     try {
       const response = axios.post('http://localhost:8080/api/v1/solicitacaoDoacao', {
         statusEntrega: statusEntrega,
@@ -32,7 +32,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleControleDoacao() {
     try {
       const response = axios.delete('http://localhost:8080/api/v1/solicitacaoDoacao/{id}', {
         statusEntrega: statusEntrega,
@@ -56,7 +56,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleControleDoacao() {
     try {
       const response = axios.put('http://localhost:8080/api/v1/solicitacaoDoacao/{id}', {
         statusEntrega: statusEntrega,
@@ -80,7 +80,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleControleDoacao() {
     try {
       const response = axios.get('http://localhost:8080/api/v1/solicitacaoDoacao', {
         statusEntrega: statusEntrega,

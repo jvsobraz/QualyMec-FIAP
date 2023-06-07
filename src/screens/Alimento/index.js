@@ -114,7 +114,7 @@ export default function Login({ navigation }) {
   }
 
   function handleCreateAlimento() {
-    navigation.navigate('Cadastrar');
+    navigation.navigate('Cadastrar Alimento');
   }
 
   return (
