@@ -24,10 +24,6 @@ export default function Servicos({navigation}) {
     navigation.navigate('Instituto')
   };
 
-  function handleCreateSoliticacao() {
-    navigation.navigate('Alimento')
-  };
-
   return (
     <View style={styles.container}>
       <Header title="Serviços" />
