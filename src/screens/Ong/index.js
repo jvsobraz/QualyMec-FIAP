@@ -4,8 +4,8 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 export default function Login({ navigation }) {
-  const [nomeOrganizacao, setnomeOrganizacao] = useState('');
-  const [emailResponsavel, setemailResponsavel] = useState('');
+  const [nomeOrganizacao, setNomeOrganizacao] = useState('');
+  const [emailResponsavel, setEmailResponsavel] = useState('');
   const [senha, setSenha] = useState('');
   const [telefoneResponsavel, setTelefoneResponsavel] = useState('');
   const [siglaEstado, setsiglaEstado] = useState('');
@@ -32,11 +32,11 @@ export default function Login({ navigation }) {
 
       if (response.status === 200) {
         Alert.alert('Sucesso');
-        setnomeOrganizacao('');
-        setemailResponsavel('');
+        setNomeOrganizacao('');
+        setEmailResponsavel('');
         setSenha('');
         setTelefoneResponsavel('');
-        setsiglaEstado('');
+        setSiglaEstado('');
         setNumeroDocumento('');
         setNomeCidade('');
         setEndereco('');
@@ -53,22 +53,30 @@ export default function Login({ navigation }) {
   function handleInstituto() {
     try {
       const response = axios.delete('http://localhost:8080/api/v1/instituto/{id}', {
-        nomeCompleto: nomeCompleto,
-        email: email,
+        nomeOrganizacao: nomeOrganizacao,
+        emailResponsavel: emailResponsavel,
         senha: senha,
-        nascimento: nascimento,
-        telefone: telefone,
+        telefoneResponsavel: telefoneResponsavel,
+        siglaEstado: siglaEstado,
+        numeroDocumento: numeroDocumento,
+        nomeCidade: nomeCidade,
+        endereco: endereco,
+        tipoDocumento: tipoDocumento,
   
       });
       console.log(response);
 
       if (response.status === 200) {
         Alert.alert('Sucesso');
-        setNomeCompleto('');
-        setEmail('');
+        setNomeOrganizacao('');
+        setEmailResponsavel('');
         setSenha('');
-        setNascimento('');
-        setTelefone('');
+        setTelefoneResponsavel('');
+        setSiglaEstado('');
+        setNumeroDocumento('');
+        setNomeCidade('');
+        setEndereco('');
+        setTipoDocumento('');
         navigation.navigate('Servicos');
       }
     } catch (error) {
@@ -81,22 +89,30 @@ export default function Login({ navigation }) {
   function handleInstituto() {
     try {
       const response = axios.put('http://localhost:8080/api/v1/instituto/{id}', {
-        nomeCompleto: nomeCompleto,
-        email: email,
+        nomeOrganizacao: nomeOrganizacao,
+        emailResponsavel: emailResponsavel,
         senha: senha,
-        nascimento: nascimento,
-        telefone: telefone,
+        telefoneResponsavel: telefoneResponsavel,
+        siglaEstado: siglaEstado,
+        numeroDocumento: numeroDocumento,
+        nomeCidade: nomeCidade,
+        endereco: endereco,
+        tipoDocumento: tipoDocumento,
   
       });
       console.log(response);
 
       if (response.status === 200) {
         Alert.alert('Sucesso');
-        setNomeCompleto('');
-        setEmail('');
+        setNomeOrganizacao('');
+        setEmailResponsavel('');
         setSenha('');
-        setNascimento('');
-        setTelefone('');
+        setTelefoneResponsavel('');
+        setSiglaEstado('');
+        setNumeroDocumento('');
+        setNomeCidade('');
+        setEndereco('');
+        setTipoDocumento('');
         navigation.navigate('Servicos');
       }
     } catch (error) {
@@ -109,22 +125,30 @@ export default function Login({ navigation }) {
   function handleInstituto() {
     try {
       const response = axios.get('http://localhost:8080/api/v1/instituto', {
-        nomeCompleto: nomeCompleto,
-        email: email,
+        nomeOrganizacao: nomeOrganizacao,
+        emailResponsavel: emailResponsavel,
         senha: senha,
-        nascimento: nascimento,
-        telefone: telefone,
+        telefoneResponsavel: telefoneResponsavel,
+        siglaEstado: siglaEstado,
+        numeroDocumento: numeroDocumento,
+        nomeCidade: nomeCidade,
+        endereco: endereco,
+        tipoDocumento: tipoDocumento,
   
       });
       console.log(response);
 
       if (response.status === 200) {
         Alert.alert('Sucesso');
-        setNomeCompleto('');
-        setEmail('');
+        setNomeOrganizacao('');
+        setEmailResponsavel('');
         setSenha('');
-        setNascimento('');
-        setTelefone('');
+        setTelefoneResponsavel('');
+        setSiglaEstado('');
+        setNumeroDocumento('');
+        setNomeCidade('');
+        setEndereco('');
+        setTipoDocumento('');
         navigation.navigate('Servicos');
       }
     } catch (error) {
