@@ -7,12 +7,96 @@ export default function Login({ navigation }) {
   const [nomeCompleto, setNomeCompleto] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [Nascimento, setNascimento] = useState('');
+  const [nascimento, setNascimento] = useState('');
   const [telefone, setTelefone] = useState('');
 
   function handleAlimento() {
     try {
       const response = axios.post('http://localhost:8080/api/v1/doador', {
+        nomeCompleto: nomeCompleto,
+        email: email,
+        senha: senha,
+        nascimento: nascimento,
+        telefone: telefone,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setNomeCompleto('');
+        setEmail('');
+        setSenha('');
+        setNascimento('');
+        setTelefone('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleAlimento() {
+    try {
+      const response = axios.delete('http://localhost:8080/api/v1/doador/{id}', {
+        nomeCompleto: nomeCompleto,
+        email: email,
+        senha: senha,
+        nascimento: nascimento,
+        telefone: telefone,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setNomeCompleto('');
+        setEmail('');
+        setSenha('');
+        setNascimento('');
+        setTelefone('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleAlimento() {
+    try {
+      const response = axios.put('http://localhost:8080/api/v1/doador/{id}', {
+        nomeCompleto: nomeCompleto,
+        email: email,
+        senha: senha,
+        nascimento: nascimento,
+        telefone: telefone,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setNomeCompleto('');
+        setEmail('');
+        setSenha('');
+        setNascimento('');
+        setTelefone('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleAlimento() {
+    try {
+      const response = axios.get('http://localhost:8080/api/v1/doador', {
         nomeCompleto: nomeCompleto,
         email: email,
         senha: senha,

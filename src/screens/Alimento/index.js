@@ -35,6 +35,84 @@ export default function Login({ navigation }) {
     }
   }
 
+  function handleAlimento() {
+    try {
+      const response = axios.delete('http://localhost:8080/api/v1/alimentoDoado/{id}', {
+        nomeAlimento: nomeAlimento,
+        dataFabricacao: dataFabricacao,
+        dataValidade: dataValidade,
+        quantidadeAlimento: quantidadeAlimento,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setNomeAlimento('');
+        setDataFabricacao('');
+        setDataValidade('');
+        setQuantidadeAlimento('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleAlimento() {
+    try {
+      const response = axios.put('http://localhost:8080/api/v1/alimentoDoado/{id}', {
+        nomeAlimento: nomeAlimento,
+        dataFabricacao: dataFabricacao,
+        dataValidade: dataValidade,
+        quantidadeAlimento: quantidadeAlimento,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setNomeAlimento('');
+        setDataFabricacao('');
+        setDataValidade('');
+        setQuantidadeAlimento('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleAlimento() {
+    try {
+      const response = axios.get('http://localhost:8080/api/v1/alimentoDoado', {
+        nomeAlimento: nomeAlimento,
+        dataFabricacao: dataFabricacao,
+        dataValidade: dataValidade,
+        quantidadeAlimento: quantidadeAlimento,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setNomeAlimento('');
+        setDataFabricacao('');
+        setDataValidade('');
+        setQuantidadeAlimento('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
   function handleCreateAlimento() {
     navigation.navigate('Cadastrar');
   }

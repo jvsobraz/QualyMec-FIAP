@@ -32,6 +32,78 @@ export default function Login({ navigation }) {
     }
   }
 
+  function handleAlimento() {
+    try {
+      const response = axios.delete('http://localhost:8080/api/v1/solicitacaoDoacao/{id}', {
+        statusEntrega: statusEntrega,
+        quantidadeArrecadada: quantidadeArrecadada,
+        numeroContribuinte: numeroContribuinte,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setStatusEntrega('');
+        setQuantidadeArrecadada('');
+        setNumeroContribuinte('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleAlimento() {
+    try {
+      const response = axios.put('http://localhost:8080/api/v1/solicitacaoDoacao/{id}', {
+        statusEntrega: statusEntrega,
+        quantidadeArrecadada: quantidadeArrecadada,
+        numeroContribuinte: numeroContribuinte,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setStatusEntrega('');
+        setQuantidadeArrecadada('');
+        setNumeroContribuinte('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleAlimento() {
+    try {
+      const response = axios.get('http://localhost:8080/api/v1/solicitacaoDoacao', {
+        statusEntrega: statusEntrega,
+        quantidadeArrecadada: quantidadeArrecadada,
+        numeroContribuinte: numeroContribuinte,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setStatusEntrega('');
+        setQuantidadeArrecadada('');
+        setNumeroContribuinte('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
   function handleCreateControleDoacao() {
     navigation.navigate('Cadastrar');
   }
