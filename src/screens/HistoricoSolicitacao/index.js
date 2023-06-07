@@ -35,9 +35,6 @@ export default function Login({ navigation }) {
       if (response.status === 200) {
         Alert.alert('Sucesso');
         setNomeOrganizacao('');
-        setEmail('');
-        setSenha('');
-        setNascimento('');
         setSiglaEstadoDestino('');
         setNomeCidadeDestino('');
         setEnderecoCidadeDestino('');
@@ -63,12 +60,12 @@ export default function Login({ navigation }) {
         <Image source={logoImage} style={styles.logo} />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Nome" value={nomeCompleto} onChangeText={setNomeCompleto} />
+        <Input placeholder="Nome Organização" value={nomeOrganizacao} onChangeText={setNomeOrganizacao} />
         <Input
-          placeholder="Nome"
+          placeholder="Nome Organização"
           secureTextEntry={true}
-          value={NomeCompleto}
-          onChangeText={setNomeCompleto}
+          value={nomeOrganizacao}
+          onChangeText={setNomeOrganizacao}
         />
       </View>
       <View style={styles.inputContainer}>
