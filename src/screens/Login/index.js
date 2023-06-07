@@ -5,13 +5,21 @@ import Button from '../../components/Button';
 
 export default function Login({ navigation }) {
   const [login, setLogin] = useState('');
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [dataNascimento, setDataNascimento] = useState('');
+  const [telefone, setTelefone] = useState('');
 
   function handleLogin() {
     try {
       const response = axios.post('http://localhost:8080/api/login--', {
-        email: login,
+        login: login,
+        nome: nome,
+        email: email,
         senha: senha,
+        dataNascimento: dataNascimento,
+        telefone: telefone,
   
       });
       console.log(response);
@@ -19,6 +27,7 @@ export default function Login({ navigation }) {
       if (response.status === 200) {
         Alert.alert('Sucesso', 'Login realizado!');
         setLogin('');
+        setEmail('');
         setSenha('');
         setNascimento('');
         setTelefone('');
@@ -42,12 +51,40 @@ export default function Login({ navigation }) {
         <Image source={logoImage} style={styles.logo} />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Email" value={login} onChangeText={setLogin} />
+        <Input placeholder="Login" value={login} onChangeText={setLogin} />
+        <Input
+          placeholder="Login"
+          secureTextEntry={true}
+          value={senha}
+          onChangeText={setSenha}
+        />
+        <Input placeholder="Email" value={email} onChangeText={setEmail} />
+        <Input
+          placeholder="Email"
+          secureTextEntry={true}
+          value={email}
+          onChangeText={setEmail}
+        />
+        <Input placeholder="Senha" value={senha} onChangeText={setSenha} />
         <Input
           placeholder="Senha"
           secureTextEntry={true}
           value={senha}
           onChangeText={setSenha}
+        />
+        <Input placeholder="Nascimento" value={nascimento} onChangeText={setNascimento} />
+        <Input
+          placeholder="Nascimento"
+          secureTextEntry={true}
+          value={nascimento}
+          onChangeText={setNascimento}
+        />
+        <Input placeholder="Telefone" value={telefone} onChangeText={setTelefone} />
+        <Input
+          placeholder="Telefone"
+          secureTextEntry={true}
+          value={telefone}
+          onChangeText={setTelefone}
         />
       </View>
       <TouchableOpacity
