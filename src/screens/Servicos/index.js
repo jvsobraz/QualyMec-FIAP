@@ -4,26 +4,42 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Header from '../../components/Header';
 
 export default function Servicos({navigation}) {
-  function handleDadosSolo() {
-    navigation.navigate('DadosSolo')
+  function handleCreateAlimento() {
+    navigation.navigate('Alimento')
   };
 
-  function handleDadosClima() {
-    navigation.navigate('DadosClima')
+  function handleCreateControleDoacao() {
+    navigation.navigate('ControleDoacao')
+  };
+
+  function handleCreateDoador() {
+    navigation.navigate('Doador')
+  };
+
+  function handleHistoricoSolicitacao() {
+    navigation.navigate('HistoricoSoliticacao')
+  };
+
+  function handleCreateInstituto() {
+    navigation.navigate('Instituto')
+  };
+
+  function handleCreateSoliticacao() {
+    navigation.navigate('Alimento')
   };
 
   return (
     <View style={styles.container}>
       <Header title="Serviços" />
       <View style={styles.contentContainer}>
-        <Text style={styles.greetingText}>Olá Igor!</Text>
+        <Text style={styles.greetingText}>Olá!</Text>
         <Text style={styles.serviceText}>
           Qual dos nossos serviços você gostaria de utilizar?
         </Text>
         <View style={styles.iconsContainer}>
           <TouchableOpacity
             style={styles.serviceButton}
-            onPress={handleDadosSolo}
+            onPress={handleCreateAlimento}
           >
             <Icon name="leaf" size={80} style={styles.serviceIcon} />
             <Text style={styles.serviceLabel}>Dados do Solo</Text>

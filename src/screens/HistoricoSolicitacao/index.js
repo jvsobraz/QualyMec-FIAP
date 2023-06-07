@@ -50,7 +50,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleCreateDoador() {
+  function handleHistoricoSolicitacao() {
     navigation.navigate('Cadastrar');
   }
 
