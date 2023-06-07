@@ -4,15 +4,19 @@ import axios from 'axios';
 
 const AdicionarDoador = () => {
   const [nomeDoador, setNomeDoador] = useState('');
+  const [emailDoador, setEmailDoador] = useState('');
+  const [senhaDoador, setSenhaDoador] = useState('');
+  const [endereco, setEndereco] = useState('');
+  const [endereco, setEndereco] = useState('');
   const [endereco, setEndereco] = useState('');
 
   const handleAdicionarDoador = () => {
-    const newDonor = {
+    const novoDoador = {
       NomeDoador: nomeDoador,
       endereco: endereco,
     };
 
-    axios.post('/api/v1/Doador', newDonor)
+    axios.post('http://localhost:8080/api/v1/doador', novoDoador)
       .then(response => {
         console.log('Doador adicionado com sucesso');
       })

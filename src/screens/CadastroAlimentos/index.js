@@ -3,13 +3,16 @@ import { View, Text } from 'react-native';
 import axios from 'axios';
 
 const AlimentoDoado = () => {
-  const [foodItems, setFoodItems] = useState([]);
+  const [nomeAlimento, setNomeAlimento] = useState([]);
+  const [dataFabricacao, setDataFabricacao] = useState([]);
+  const [dataValidade, setDataValidade] = useState([]);
+  const [quantidadeAlimento, setQuantidadeAlimento] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/v1/AlimentoDoado')
+    axios.get('http://localhost:8080/api/v1/alimentoDoado')
       .then(response => {
         const { data } = response;
-        setFoodItems(data);
+        setNomeAlimento(data);
       })
       .catch(error => {
         console.error(error);
@@ -18,7 +21,7 @@ const AlimentoDoado = () => {
 
   return (
     <View>
-      {foodItems.map(item => (
+      {nomeAlimento.map(item => (
         <View key={item.Id}>
           <Text>{item.nome}</Text>
           <Text>{item.nrRegistro}</Text>
