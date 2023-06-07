@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Header from '../../components/Header';
+import styles from './styles';
 
 export default function Servicos({navigation}) {
   function handleCreateAlimento() {
@@ -30,22 +31,50 @@ export default function Servicos({navigation}) {
       <View style={styles.contentContainer}>
         <Text style={styles.greetingText}>Olá!</Text>
         <Text style={styles.serviceText}>
-          Qual tela você gostaria de utilizar?
+          O que você gostaria de utilizar?
         </Text>
         <View style={styles.iconsContainer}>
           <TouchableOpacity
             style={styles.serviceButton}
             onPress={handleCreateAlimento}
           >
-            <Icon name="leaf" size={80} style={styles.serviceIcon} />
-            <Text style={styles.serviceLabel}>Dados do Solo</Text>
+            <Text style={styles.serviceLabel}>Alimentos</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.serviceButton}
-            onPress={handleDadosClima}
+            onPress={handleCreateAlimento}
           >
-            <Icon name="cloud" size={80} style={styles.serviceIcon} />
-            <Text style={styles.serviceLabel}>Dados do Clima</Text>
+            <Text style={styles.serviceLabel}>Alimentos</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.iconsContainer}>
+          <TouchableOpacity
+            style={styles.serviceButton}
+            onPress={handleCreateControleDoacao}
+          >
+            <Text style={styles.serviceLabel}>Doadores</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.serviceButton}
+            onPress={handleCreateDoador}
+          >
+            <Text style={styles.serviceLabel}>Doadores</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.iconsContainer}>
+          <TouchableOpacity
+            style={styles.serviceButton}
+            onPress={handleHistoricoSolicitacao}
+          >
+            <Text style={styles.serviceLabel}>ONGs</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.serviceButton}
+            onPress={handleCreateInstituto}
+          >
+            <Text style={styles.serviceLabel}>ONGs</Text>
           </TouchableOpacity>
         </View>
       </View>
