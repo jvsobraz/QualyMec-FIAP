@@ -12,19 +12,22 @@ export default function Login({ navigation }) {
       const response = axios.post('http://localhost:8080/api/login--', {
         email: login,
         senha: senha,
+  
       });
       console.log(response);
 
       if (response.status === 200) {
-        Alert.alert('Sucesso', 'Login realizado com sucesso!');
+        Alert.alert('Sucesso', 'Login realizado!');
         setLogin('');
         setSenha('');
+        setNascimento('');
+        setTelefone('');
         navigation.navigate('Servicos');
       }
     } catch (error) {
       Alert.alert(
         'Erro',
-        'Não foi possível realizar o login. Verifique suas credenciais e tente novamente.'
+        'Não foi possível realizar o login. Verifique suas credenciais.'
       );
     }
   }
@@ -50,7 +53,7 @@ export default function Login({ navigation }) {
       <TouchableOpacity
         style={styles.createAccountText}
         onPress={handleCreateAccount}>
-        <Text>Já possui conta? Criar conta</Text>
+        <Text>Já possui conta?</Text>
       </TouchableOpacity>
 
       <Button title="LOGIN" onPress={handleLogin} />
