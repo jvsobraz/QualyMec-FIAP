@@ -21,7 +21,7 @@ export default function Login({ navigation }) {
       console.log(response);
 
       if (response.status === 200) {
-        Alert.alert('Sucesso', 'Login realizado!');
+        Alert.alert('Sucesso');
         setNomeAlimento('');
         setDataFabricacao('');
         setDataValidade('');
@@ -31,7 +31,6 @@ export default function Login({ navigation }) {
     } catch (error) {
       Alert.alert(
         'Erro',
-        'Não foi possível realizar o login. Verifique suas credenciais.'
       );
     }
   }
