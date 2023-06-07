@@ -9,21 +9,23 @@ export default function Login({ navigation }) {
   const [dataValidade, setDataValidade] = useState('');
   const [quantidadeAlimento, setQuantidadeAlimento] = useState('');
 
-  function handleLogin() {
+  function handleAlimento() {
     try {
       const response = axios.post('http://localhost:8080/api/v1/alimentoDoado', {
-        email: login,
-        senha: senha,
+        nomeAlimento: nomeAlimento,
+        dataFabricacao: dataFabricacao,
+        dataValidade: dataValidade,
+        quantidadeAlimento: quantidadeAlimento,
   
       });
       console.log(response);
 
       if (response.status === 200) {
         Alert.alert('Sucesso', 'Login realizado!');
-        setLogin('');
-        setSenha('');
-        setNascimento('');
-        setTelefone('');
+        setNomeAlimento('');
+        setDataFabricacao('');
+        setDataValidade('');
+        setQuantidadeAlimento('');
         navigation.navigate('Servicos');
       }
     } catch (error) {
@@ -34,7 +36,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleCreateAccount() {
+  function handleCreateAlimento() {
     navigation.navigate('Cadastrar');
   }
 
@@ -44,21 +46,43 @@ export default function Login({ navigation }) {
         <Image source={logoImage} style={styles.logo} />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Email" value={login} onChangeText={setLogin} />
+        <Input placeholder="Nome" value={nomeAlimento} onChangeText={setNomeAlimento} />
         <Input
-          placeholder="Senha"
+          placeholder="Nome do Alimento"
           secureTextEntry={true}
-          value={senha}
-          onChangeText={setSenha}
+          value={nomeAlimento}
+          onChangeText={setNomeAlimento}
         />
       </View>
-      <TouchableOpacity
-        style={styles.createAccountText}
-        onPress={handleCreateAccount}>
-        <Text>Já possui conta?</Text>
-      </TouchableOpacity>
+      <View style={styles.inputContainer}>
+        <Input placeholder="Data de Fabricação" value={dataFabricacao} onChangeText={setDataFabricacao} />
+        <Input
+          placeholder="Data de Fabricação"
+          secureTextEntry={true}
+          value={dataFabricacao}
+          onChangeText={setDataFabricacao}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Input placeholder="Validade" value={dataValidade} onChangeText={setDataValidade} />
+        <Input
+          placeholder="Validade"
+          secureTextEntry={true}
+          value={dataValidade}
+          onChangeText={setDataValidade}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Input placeholder="Quantidade Alimento" value={quantidadeAlimento} onChangeText={setQuantidadeAlimento} />
+        <Input
+          placeholder="Quantidade Alimento"
+          secureTextEntry={true}
+          value={quantidadeAlimento}
+          onChangeText={setQuantidadeAlimento}
+        />
+      </View>
 
-      <Button title="LOGIN" onPress={handleLogin} />
+      <Button title="Cadastro Alimento" onPress={handleCreateAlimento} />
     </View>
   );
 }
