@@ -20,17 +20,8 @@ export default StyleSheet.create({
     marginBottom: 40,
     textAlign: 'center',
   },
-  iconsContainer: {
-    marginTop: 80,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
   serviceButton: {
     alignItems: 'center',
-  },
-  serviceIcon: {
-    marginBottom: 10,
   },
   serviceLabel: {
     fontSize: 16,
