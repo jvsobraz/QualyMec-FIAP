@@ -3,7 +3,6 @@ import { View, Text, Alert  } from 'react-native';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import styles from './styles';
 import axios from 'axios';
 
 export default function Cadastrar() {

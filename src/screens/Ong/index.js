@@ -4,15 +4,55 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 export default function Login({ navigation }) {
-  const [nomeCompleto, setNomeCompleto] = useState('');
-  const [email, setEmail] = useState('');
+  const [nomeOrganizacao, setnomeOrganizacao] = useState('');
+  const [emailResponsavel, setemailResponsavel] = useState('');
   const [senha, setSenha] = useState('');
-  const [nascimento, setNascimento] = useState('');
-  const [telefone, setTelefone] = useState('');
+  const [telefoneResponsavel, setTelefoneResponsavel] = useState('');
+  const [siglaEstado, setsiglaEstado] = useState('');
+  const [numeroDocumento, setNumeroDocumento] = useState('');
+  const [nomeCidade, setNomeCidade] = useState('');
+  const [endereco, setEndereco] = useState('');
+  const [tipoDocumento, setTipoDocumento] = useState('');
 
-  function handleAlimento() {
+  function handleIntituto() {
     try {
-      const response = axios.post('http://localhost:8080/api/v1/doador', {
+      const response = axios.post('http://localhost:8080/api/v1/instituto', {
+        nomeOrganizacao: nomeOrganizacao,
+        emailResponsavel: emailResponsavel,
+        senha: senha,
+        telefoneResponsavel: telefoneResponsavel,
+        siglaEstado: siglaEstado,
+        numeroDocumento: numeroDocumento,
+        nomeCidade: nomeCidade,
+        endereco: endereco,
+        tipoDocumento: tipoDocumento,
+  
+      });
+      console.log(response);
+
+      if (response.status === 200) {
+        Alert.alert('Sucesso');
+        setnomeOrganizacao('');
+        setemailResponsavel('');
+        setSenha('');
+        setTelefoneResponsavel('');
+        setsiglaEstado('');
+        setNumeroDocumento('');
+        setNomeCidade('');
+        setEndereco('');
+        setTipoDocumento('');
+        navigation.navigate('Servicos');
+      }
+    } catch (error) {
+      Alert.alert(
+        'Erro',
+      );
+    }
+  }
+
+  function handleIntituto() {
+    try {
+      const response = axios.delete('http://localhost:8080/api/v1/instituto/{id}', {
         nomeCompleto: nomeCompleto,
         email: email,
         senha: senha,
@@ -38,9 +78,9 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleIntituto() {
     try {
-      const response = axios.delete('http://localhost:8080/api/v1/doador/{id}', {
+      const response = axios.put('http://localhost:8080/api/v1/instituto/{id}', {
         nomeCompleto: nomeCompleto,
         email: email,
         senha: senha,
@@ -66,9 +106,9 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
+  function handleIntituto() {
     try {
-      const response = axios.put('http://localhost:8080/api/v1/doador/{id}', {
+      const response = axios.get('http://localhost:8080/api/v1/instituto', {
         nomeCompleto: nomeCompleto,
         email: email,
         senha: senha,
@@ -94,35 +134,7 @@ export default function Login({ navigation }) {
     }
   }
 
-  function handleAlimento() {
-    try {
-      const response = axios.get('http://localhost:8080/api/v1/doador', {
-        nomeCompleto: nomeCompleto,
-        email: email,
-        senha: senha,
-        nascimento: nascimento,
-        telefone: telefone,
-  
-      });
-      console.log(response);
-
-      if (response.status === 200) {
-        Alert.alert('Sucesso');
-        setNomeCompleto('');
-        setEmail('');
-        setSenha('');
-        setNascimento('');
-        setTelefone('');
-        navigation.navigate('Servicos');
-      }
-    } catch (error) {
-      Alert.alert(
-        'Erro',
-      );
-    }
-  }
-
-  function handleCreateDoador() {
+  function handleCreateInstituto() {
     navigation.navigate('Cadastrar');
   }
 
@@ -178,7 +190,7 @@ export default function Login({ navigation }) {
       </View>
       
 
-      <Button title="Cadastro Doador" onPress={handleCreateDoador} />
+      <Button title="Cadastro Instituto" onPress={handleCreateInstituto} />
     </View>
   );
 }
