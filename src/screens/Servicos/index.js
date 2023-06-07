@@ -30,7 +30,7 @@ export default function Servicos({navigation}) {
       <View style={styles.contentContainer}>
         <Text style={styles.greetingText}>Olá!</Text>
         <Text style={styles.serviceText}>
-          Qual dos nossos serviços você gostaria de utilizar?
+          Qual tela você gostaria de utilizar?
         </Text>
         <View style={styles.iconsContainer}>
           <TouchableOpacity
