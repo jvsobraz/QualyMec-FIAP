@@ -3,6 +3,7 @@ import { View, Text, Alert  } from 'react-native';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import styles from './styles';
 import axios from 'axios';
 
 export default function Cadastrar() {
@@ -14,7 +15,7 @@ export default function Cadastrar() {
 
   function handleCadastro() {
     try {
-      const response = axios.post('http://localhost:8080/api/cadastrar', {
+      const response = axios.post('http://localhost:8080/api/registrar', {
         nome,
         email,
         senha,
@@ -65,10 +66,9 @@ export default function Cadastrar() {
         value={senha}
         onChangeText={setSenha}
       />
-      <View>
+      <View style={styles.inputSpacing} />
       <Input
         placeholder="Telefone"
-        secureTextEntry={true}
         value={telefone}
         onChangeText={setTelefone}
       />
