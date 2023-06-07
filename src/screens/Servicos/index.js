@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Header from '../../components/Header';
 import styles from './styles';
 
-export default function Servicos({navigation}) {
+export default function Servicos({ navigation }) {
   function handleCreateAlimento() {
     navigation.navigate('Alimento')
   };
@@ -51,7 +51,7 @@ export default function Servicos({navigation}) {
         <View style={styles.iconsContainer}>
           <TouchableOpacity
             style={styles.serviceButton}
-            onPress={handleCreateControleDoacao}
+            onPress={handleCreateDoador}
           >
             <Text style={styles.serviceLabel}>Doadores</Text>
           </TouchableOpacity>
@@ -66,7 +66,7 @@ export default function Servicos({navigation}) {
         <View style={styles.iconsContainer}>
           <TouchableOpacity
             style={styles.serviceButton}
-            onPress={handleHistoricoSolicitacao}
+            onPress={handleCreateInstituto}
           >
             <Text style={styles.serviceLabel}>ONGs</Text>
           </TouchableOpacity>
@@ -75,6 +75,21 @@ export default function Servicos({navigation}) {
             onPress={handleCreateInstituto}
           >
             <Text style={styles.serviceLabel}>ONGs</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.iconsContainer}>
+          <TouchableOpacity
+            style={styles.serviceButton}
+            onPress={handleHistoricoSolicitacao}
+          >
+            <Text style={styles.serviceLabel}>Histórico Solicitação</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.serviceButton}
+            onPress={handleHistoricoSolicitacao}
+          >
+            <Text style={styles.serviceLabel}>Histórico Solicitação</Text>
           </TouchableOpacity>
         </View>
       </View>
