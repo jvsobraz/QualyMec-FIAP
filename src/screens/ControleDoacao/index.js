@@ -141,7 +141,7 @@ export default function Login({ navigation }) {
         />
       </View>
 
-      <Button title="Cadastro Número COntribuinte" onPress={handleCreateControleDoacao} />
+      <Button title="Cadastro Número Contribuinte" onPress={handleCreateControleDoacao} />
     </View>
   );
 }

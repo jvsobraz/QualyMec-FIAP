@@ -123,7 +123,7 @@ export default function Login({ navigation }) {
         <Image source={logoImage} style={styles.logo} />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Nome" value={nomeAlimento} onChangeText={setNomeAlimento} />
+        <Input placeholder="Nome Alimento" value={nomeAlimento} onChangeText={setNomeAlimento} />
         <Input
           placeholder="Nome do Alimento"
           secureTextEntry={true}

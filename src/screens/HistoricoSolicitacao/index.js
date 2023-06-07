@@ -69,44 +69,62 @@ export default function Login({ navigation }) {
         />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Email" value={email} onChangeText={setEmail} />
+        <Input placeholder="Sigla Estado" value={siglaEstadoDestino} onChangeText={setSiglaEstadoDestino} />
         <Input
-          placeholder="Email"
+          placeholder="Sigla Estado"
           secureTextEntry={true}
-          value={email}
-          onChangeText={setEmail}
+          value={siglaEstadoDestino}
+          onChangeText={setSiglaEstadoDestino}
         />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Senha" value={senha} onChangeText={setSenha} />
+        <Input placeholder="Nome cidade destino" value={nomeCidadeDestino} onChangeText={setNomeCidadeDestino} />
         <Input
-          placeholder="Senha"
+          placeholder="Nome Cidade Destino"
           secureTextEntry={true}
-          value={senha}
-          onChangeText={setSenha}
+          value={nomeCidadeDestino}
+          onChangeText={setNomeCidadeDestino}
         />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Nascimento" value={nascimento} onChangeText={setNascimento} />
+        <Input placeholder="Endereço Cidade Destino" value={enderecoCidadeDestino} onChangeText={setEnderecoCidadeDestino} />
         <Input
-          placeholder="Nascimento"
+          placeholder="Endereço Cidade Destino"
           secureTextEntry={true}
-          value={nascimento}
-          onChangeText={setNascimento}
+          value={enderecoCidadeDestino}
+          onChangeText={setEnderecoCidadeDestino}
         />
       </View>
       <View style={styles.inputContainer}>
-        <Input placeholder="Telefone" value={telefone} onChangeText={setTelefone} />
+        <Input placeholder="Nome Alimento" value={nomeAlimento} onChangeText={setNomeAlimento} />
         <Input
-          placeholder="Telefone"
+          placeholder="Nome Alimento"
           secureTextEntry={true}
-          value={telefone}
-          onChangeText={setTelefone}
+          value={nomeAlimento}
+          onChangeText={setNomeAlimento}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Input placeholder="Quantidade Alimento" value={quantidadeAlimento} onChangeText={setQuantidadeAlimento} />
+        <Input
+          placeholder="Quantidade Alimento"
+          secureTextEntry={true}
+          value={quantidadeAlimento}
+          onChangeText={setQuantidadeAlimento}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Input placeholder="Status Entrega" value={statusEntrega} onChangeText={setStatusEntrega} />
+        <Input
+          placeholder="Status Entrega"
+          secureTextEntry={true}
+          value={statusEntrega}
+          onChangeText={setStatusEntrega}
         />
       </View>
       
 
-      <Button title="Cadastro Doador" onPress={handleCreateDoador} />
+      <Button title="Histórico Solicitação" onPress={handleHistoricoSolicitacao} />
     </View>
   );
 }
